@@ -95,4 +95,29 @@ def d2b(n):
         return n % 2 + 10 * d2b(int(n / 2))
 
 
-print(d2b(10034))
+# print(d2b(10034))
+
+arr = [1, 2, 3]
+
+
+def productOfArray(arr):
+    if len(arr) == 0:
+        return 1
+    else:
+        return arr[0] * productOfArray(arr[1:])
+    # result = 1
+    # for x in arr:
+    #     result *= x
+    # return result
+
+# print(productOfArray(arr))
+
+# recursive range
+
+def recurse_range(n):
+    if n <= 0:
+        return 0
+
+    return n + recurse_range(n - 1)
+
+print(recurse_range(35))
