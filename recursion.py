@@ -120,4 +120,42 @@ def recurse_range(n):
 
     return n + recurse_range(n - 1)
 
-print(recurse_range(35))
+# print(recurse_range(35))
+
+# reverse
+
+
+def reverse(strng):
+    if len(strng) <= 1:
+        return strng
+    return strng[len(strng) - 1] + reverse(strng[:len(strng) - 1])
+
+
+# print(reverse("python"))
+
+
+# is Palindrome
+
+def isPalindrome(strng):
+    if len(strng) == 0:
+        return True
+    if strng[0] != strng[len(strng) - 1]:
+        return False
+    return isPalindrome(strng[1: -1])
+
+# print(isPalindrome("blue"))
+
+
+# flatten
+
+def flatten(arr):
+    result = []
+    for x in arr:
+        if type(x) is list:
+            result.extend(flatten(x))
+        else:
+            result.append(x)
+    return result
+
+
+print(flatten([1, 2, 3, [4, 5]]))
